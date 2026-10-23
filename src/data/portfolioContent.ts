@@ -1,0 +1,205 @@
+export interface ExperienceItem {
+  id: string;
+  organisation: string;
+  role: string;
+  dates: string;
+  responsibilities: string[];
+  source_note?: string;
+  isUncertainDatesOrName?: boolean;
+}
+
+export interface EducationItem {
+  qualification: string;
+  field?: string;
+  institution: string;
+  dates?: string;
+  status?: string;
+  source?: string;
+}
+
+export interface AchievementItem {
+  organisation: string;
+  role: string;
+  description: string;
+}
+
+export interface PortfolioData {
+  site: {
+    owner: string;
+    purpose: string;
+    status: string;
+    sections: string[];
+    palette: {
+      primary_rose: string;
+      soft_pink: string;
+      blush_beige: string;
+      warm_beige: string;
+      ivory: string;
+    };
+    design_notes: string[];
+  };
+  hero: {
+    eyebrow: string;
+    headline: string;
+    supporting_line: string;
+    logo_asset: string;
+    logo_instruction: string;
+  };
+  about: {
+    quote: string;
+    paragraphs: string[];
+  };
+  experience: ExperienceItem[];
+  skills_and_interests: {
+    skills_from_cv: string[];
+    interests_from_cv: string[];
+    software_skills_note: string;
+    ai_skills_note: string;
+  };
+  education: EducationItem[];
+  achievements: AchievementItem[];
+  contact: {
+    emails: string[];
+    phone_numbers: string[];
+    publishing_note: string;
+  };
+}
+
+export const initialPortfolioData: PortfolioData = {
+  site: {
+    owner: "Janvi Gupta",
+    purpose: "Personal design portfolio starter website",
+    status: "Initial version; project case studies will be added later",
+    sections: [
+      "Hero",
+      "About Me",
+      "Work Experience",
+      "Skills & Interests",
+      "Selected Work placeholder",
+      "Education & Achievements",
+      "Contact"
+    ],
+    palette: {
+      primary_rose: "#C9788A",
+      soft_pink: "#E29C9C",
+      blush_beige: "#E6BEAE",
+      warm_beige: "#EEDAC5",
+      ivory: "#F5F5DC"
+    },
+    design_notes: [
+      "Use a light, minimal, professional layout with pink and beige as the core palette.",
+      "Keep contrast and readability high; use dark warm-grey text on pale backgrounds.",
+      "Use the signature reference as inspiration for a personal monogram/wordmark logo. Preserve the recognisable handwritten character; do not invent a different name or unrelated symbol.",
+      "The portfolio is a work in progress. Use a restrained placeholder for future projects rather than inventing projects or case-study details."
+    ]
+  },
+  hero: {
+    eyebrow: "DESIGN PORTFOLIO",
+    headline: "Welcome to my portfolio",
+    supporting_line: "Ideas, stories, and experiences — thoughtfully designed.",
+    logo_asset: "assets/palette-reference.jpg",
+    logo_instruction: "Create a clean, scalable logo/wordmark inspired by the uploaded handwritten signature. Keep the name Janvi legible and retain the small heart/underline motif only if it can be simplified tastefully."
+  },
+  about: {
+    quote: "I gather moments like souvenirs and turn them into something of my own.",
+    paragraphs: [
+      "I'm Janvi Gupta, currently pursuing my Master's in Visual Experience Design at Karnavati University. An aspiring UI/UX designer, a storyteller at heart and a curious soul. I find inspiration in everyday moments, new experiences and the world around me. I love exploring how creativity and design can transform ideas into meaningful digital experiences.",
+      "For me, every project is an opportunity to learn, experiment and create something that is uniquely mine."
+    ]
+  },
+  experience: [
+    {
+      id: "exp-1",
+      organisation: "Feliks Marketing LLP",
+      role: "Graphic Design Intern",
+      dates: "May 2026 – August 2026",
+      responsibilities: [
+        "Collaborated with different companies and created social media creatives for different clients.",
+        "Worked on social media marketing and strategy."
+      ],
+      source_note: "Transcribed from the supplied CV; confirm the organisation spelling and dates before publishing.",
+      isUncertainDatesOrName: true
+    },
+    {
+      id: "exp-2",
+      organisation: "Marched Solutions LLP",
+      role: "Graphic Design Intern",
+      dates: "November 2023 – May 2025",
+      responsibilities: [
+        "Collaborated with different companies and created social media designs.",
+        "Worked on social media marketing and strategy.",
+        "Worked on a data analytics dashboard.",
+        "Supported banners, thumbnails, and social media campaigns."
+      ],
+      source_note: "Transcribed from the supplied CV; confirm the organisation spelling before publishing.",
+      isUncertainDatesOrName: true
+    },
+    {
+      id: "exp-3",
+      organisation: "Freelance",
+      role: "Graphic Designer & Video Editor",
+      dates: "2022 – Present",
+      responsibilities: [
+        "Created visual content for brand strategy clients through social media strategies, Meta Suite, and YouTube ads.",
+        "Managed projects from concept through design execution."
+      ],
+      source_note: "Wording lightly edited for readability while retaining the supplied meaning.",
+      isUncertainDatesOrName: false
+    }
+  ],
+  skills_and_interests: {
+    skills_from_cv: [
+      "Creativity & Visual Thinking",
+      "Communication",
+      "Time Management",
+      "Problem-Solving",
+      "Innovation"
+    ],
+    interests_from_cv: [
+      "Basketball",
+      "Swimming",
+      "Self-help books",
+      "Fitness / gym"
+    ],
+    software_skills_note: "The supplied CV has a Software Skills heading, but the specific software names are not extractable from its text. Do not invent software skills; leave this area as an editable placeholder until Janvi supplies the list.",
+    ai_skills_note: "The supplied CV has an AI Skills heading, but no readable skill names were extracted. Leave as an editable placeholder rather than inventing content."
+  },
+  education: [
+    {
+      qualification: "Master's Degree",
+      field: "Visual Experience Design",
+      institution: "Karnavati University",
+      status: "Currently pursuing",
+      source: "About Me document and current user brief"
+    },
+    {
+      qualification: "Bachelor's Degree",
+      field: "Animation, Multimedia & Graphic Design",
+      institution: "iLEAD Institute, Kolkata",
+      dates: "2021–2024"
+    },
+    {
+      qualification: "High School",
+      institution: "Ashok Hall Girl's Higher Secondary School, Kolkata",
+      dates: "2019–2021"
+    }
+  ],
+  achievements: [
+    {
+      organisation: "NSS Unit at iLEAD",
+      role: "Vice-President",
+      description: "Managed and conducted events and contributed to the society."
+    }
+  ],
+  contact: {
+    emails: [
+      "janviguptawork2@gmail.com",
+      "ku2503m0047@karnavatiuniversity.edu.in"
+    ],
+    phone_numbers: [
+      "9330765991",
+      "9123792824"
+    ],
+    publishing_note: "Contact details are taken from the supplied CV. Choose which details you want publicly displayed before publishing."
+  }
+};
